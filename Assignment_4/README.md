@@ -71,8 +71,8 @@ Assignment_4/
 
 2. **Add a transaction request to the queue:**
     ```
-    curl -X POST "http://localhost:7500/api/v1/queues/transactions/push" \\
-         -H "Content-Type: application/json" \\
+    curl -X POST "http://localhost:7500/api/v1/queues/transactions/push" \
+         -H "Content-Type: application/json" \
          -d '{"transaction_id": "test-001", "data": {"status": "submitted", "vendor_id": 73, "amount": 229.88, "timestamp": 1700000000}}'
     ```
 
