@@ -123,6 +123,8 @@ Assignment_4/
 
 ## Author
 
-Samir Ibrahimov, IMC Krems, 2025
+Samir Ibrahimov, 
+Jaime Gracia Gil
 
+IMC Krems, 2025
 """
