@@ -10,6 +10,7 @@ This project implements a distributed fraud detection system using a message que
 
 ## File Structure
 
+```
 Assignment_4/
 ├── queue_service/
 │ ├── app/
@@ -40,6 +41,7 @@ Assignment_4/
 ├── Dockerfile # Docker build file for each service
 ├── docker-compose.yml # Compose setup for queue_service and mpi_prediction
 └── README.md # This file
+```
 
 ---
 
