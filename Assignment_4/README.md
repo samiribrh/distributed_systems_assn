@@ -15,31 +15,39 @@ Assignment_4/
 ├── queue_service/
 │ ├── app/
 │ │ ├── api/
-│ │ │ └── v1/
-│ │ │ └── queues.py # API endpoints for queues
+│ │ │ ├── v1/
+│ │ │ │ ├── endpoints/
+│ │ │ │ │ └── queue.py # API endpoints for queues
 │ │ ├── core/
 │ │ │ ├── config.py # Configurations
 │ │ │ ├── logger.py # Logging utility
 │ │ │ ├── persistence.py # Periodic save/load for queues
+│ │ │ ├── queue_initializer.py # For default queues
 │ │ │ └── storage.py # In-memory data storage
-│ │ └── models/
-│ │ └── queue.py # Pydantic models for messages
-│ └── main.py # FastAPI app setup
-├── mpi_prediction/
+│ │ ├── models/
+│ │ │ └── queue.py # Pydantic models for messages
+│ │ └── main.py # FastAPI app setup
+| ├── requirements.txt # Dependencies
+| ├── test.py # Tests for application
+| └── Dockerfile # Docker service configuration
+├── app/
 │ ├── core/
 │ │ └── config.py # Configurations (queue endpoints, model path, etc.)
 │ ├── model/
 │ │ └── predictor.py # Model loading and prediction helpers
+│ ├── models/
+│ │ └── fraud_rf_model.pkl # Pre-trained RandomForest model
 │ ├── queue_client/
 │ │ ├── transactions_queue_client.py # Client for pulling transaction requests
 │ │ └── results_queue_client.py # Client for pushing prediction results
 │ ├── mpi_master.py # MPI master (distributes jobs to workers)
 │ ├── mpi_worker.py # MPI worker (runs model predictions)
 │ ├── main.py # Entry point (launches master/workers)
-│ └── requirements.txt # Dependencies
-├── fraud_rf_model.pkl # Pre-trained RandomForest model
-├── Dockerfile # Docker build file for each service
+| ├── requirements.txt # Dependencies
+| └── Dockerfile # Docker service configuration
 ├── docker-compose.yml # Compose setup for queue_service and mpi_prediction
+├── Documentation.docx # Documentation of the project
+├── Assignment_4.pdf # Assignment file
 └── README.md # This file
 ```
 
