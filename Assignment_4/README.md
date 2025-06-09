@@ -121,7 +121,7 @@ Assignment_4/
 
 ---
 
-## Author
+## Authors
 
 Samir Ibrahimov, 
 Jaime Gracia Gil
