@@ -1,0 +1,30 @@
+services:
+  queue_service:
+    build:
+      context: ./queue_service
+    container_name: queue_service
+    ports:
+      - "7500:7500"
+    networks:
+      - assignment_net
+
+  mpi_prediction:
+    build:
+      context: ./app
+    container_name: mpi_prediction
+    depends_on:
+      - queue_service
+    environment:
+      - QUEUE_SERVICE_HOST=queue_service
+      - QUEUE_SERVICE_PORT=7500
+      - TRANSACTIONS_QUEUE=transactions
+      - RESULTS_QUEUE=results
+      - NUM_WORKERS=5
+    networks:
+      - assignment_net
+    command: >
+      mpirun -np 6 --allow-run-as-root python main.py
+
+networks:
+  assignment_net:
+    driver: bridge
